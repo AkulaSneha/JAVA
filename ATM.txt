@@ -1,0 +1,52 @@
+import java.util.Scanner;
+class ATM
+{
+    public static void main(String args[] )
+    {
+        int balanceamount = 10000, withdraw, depositmoney;
+        Scanner sc = new Scanner(System.in);
+        while(true)
+        {
+            System.out.println("ATM");
+            System.out.println("Choose 1 for Withdraw");
+            System.out.println("Choose 2 for Deposit");
+            System.out.println("Choose 3 for Check Balance");
+            System.out.println("Choose 4 for EXIT");
+            System.out.print("Choose the operation you want to perform:");
+            int n = sc.nextInt();
+            switch(n)
+            {
+                case 1:
+                    System.out.print("Enter the money to be withdrawn:");
+                    withdraw = sc.nextInt();
+                    if(balanceamount >= withdraw)
+                    {
+                        balanceamount = balanceamount - withdraw;
+                        System.out.println(" collect your money");
+                    }
+                    else
+                    {
+                        System.out.println("Insufficient Balance in your account");
+                    }
+                    System.out.println("");
+                    break;
+
+                case 2:
+                    System.out.print("Enter money to be deposited:");
+                    depositmoney= sc.nextInt();
+                    balanceamount = balanceamount + depositmoney;
+                    System.out.println("Your Money has been successfully depsited");
+                    System.out.println("");
+                    break;
+
+                case 3:
+                    System.out.println("Balance in the account: "+balanceamount);
+                    System.out.println("");
+                    break;
+
+                case 4:
+                    System.exit(0);
+            }
+        }
+    }
+}

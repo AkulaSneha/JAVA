@@ -1,0 +1,41 @@
+import java.util.*;
+class StudentGradeCalculator {
+    public static void main(String[] args) {
+       System.out.println("Enter number of subjects:");
+       Scanner sc=new Scanner(System.in);
+       int sub=sc.nextInt();
+       System.out.println("Number of subjects are: "+sub );
+       System.out.println("Enter the marks of  subjects: ");
+       int tel=sc.nextInt();
+       int hin=sc.nextInt();
+       int eng=sc.nextInt();
+       int phy=sc.nextInt();
+       int bio=sc.nextInt();
+       int soc=sc.nextInt();
+       int sum=(tel+hin+eng+phy+bio+soc);
+       System.out.println("The sum of marks: "+sum);
+       float avg=(tel+hin+eng+phy+bio+soc)/(sub);
+       System.out.println("The average marks of a student :"+avg);
+       if(avg<=80)
+       {
+           System.out.println("Grade of the student is : A");
+       }
+       else if(avg<80 || avg>=60)
+       {
+            System.out.println("Grade of the student is : B");
+            
+       }
+       else if(avg<60 || avg>=40)
+       {
+           System.out.println("Grade of the student is : c");
+           
+       }
+       else if(avg<40)
+       {
+            System.out.println("Grade of the student is : F");
+       
+       }
+       
+       
+    }
+}

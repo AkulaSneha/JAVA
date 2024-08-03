@@ -1,0 +1,42 @@
+import java.util.*;
+class NumberGame {
+   static void  numberguessing()
+    {
+        Scanner sc=new Scanner(System.in);
+         int number = 1 + (int)(100 * Math.random());
+        int trials=5;
+        int i;
+        System.out.println("Guess the number between 1 to 100:");
+        for(i=0;i<trials;i++)
+        {
+            System.out.println("Enter the guess number:");
+        int guess=sc.nextInt();
+        if(guess==number)
+        {
+            System.out.println("congratulations..");
+            System.out.println("The number you guessed is correct:");    
+            break;
+        }
+        else if(number<guess && i!=(trials-1))
+        {
+            System.out.println("The number is" + "less than " +guess);
+        }
+        else if(number>guess && i!=(trials-1))
+        {
+            System.out.println("The number is" + " greater than " 
+            +guess);
+        }
+        }
+        if( i==trials)
+        {
+            System.out.println("You are lost");
+            System.out.println("You have finished all your trials");
+            System.out.println("The number is :" +number);
+        }
+    }
+    public static void main(String args[])
+    {
+        numberguessing();
+    }
+}
+        
